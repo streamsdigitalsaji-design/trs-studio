@@ -1,1 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Recording Studio | TRS Digital</title>
+  <meta name="description" content="Explore the professional recording equipment used at TRS Recording Studio in Nalanchira, Trivandrum.">
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f7f8fa;
+      color:#111;
+      line-height:1.6;
+    }
+
+    /* HEADER */
+
+    header{
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid #e5e5e5;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:16px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      font-size:28px;
+      font-weight:900;
+      letter-spacing:2px;
+      text-decoration:none;
+      color:#111;
+    }
+
+    .back{
+      text-decoration:none;
+      color:#111;
+      font-weight:700;
+      border:1px solid #ccc;
+      padding:10px 18px;
+      border-radius:8px;
+      transition:.2s;
+    }
+
+    .back:hover{
+      background:#111;
+      color:white;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:420px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:80px 24px;
+      background:
+        radial-gradient(circle at 20% 30%,rgba(30,120,255,.12),transparent 35%),
+        radial-gradient(circle at 80% 70%,rgba(120,160,255,.15),transparent 40%),
+        linear-gradient(135deg,#ffffff,#eef2f7);
+    }
+
+    .hero-content{
+      max-width:850px;
+    }
+
+    .eyebrow{
+      font-size:13px;
+      letter-spacing:4px;
+      font-weight:800;
+      color:#777;
+      margin-bottom:15px;
+    }
+
+    h1{
+      font-size:clamp(50px,8vw,90px);
+      line-height:1;
+      letter-spacing:-3px;
+      margin-bottom:10px;
+    }
+
+    h1 span{
+      display:block;
+      font-size:clamp(18px,3vw,30px);
+      letter-spacing:5px;
+      margin-top:14px;
+      background:linear-gradient(
+        90deg,
+        #60656a,
+        #c8cdd2,
+        #7b8288,
+        #dce0e3,
+        #60656a
+      );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero p{
+      max-width:650px;
+      margin:25px auto 0;
+      color:#555;
+      font-size:17px;
+    }
+
+    /* EQUIPMENT */
+
+    .equipment{
+      max-width:1200px;
+      margin:auto;
+      padding:80px 24px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      margin-bottom:8px;
+    }
+
+    .section-title p{
+      color:#777;
+    }
+
+    .category{
+      margin-bottom:60px;
+    }
+
+    .category h3{
+      font-size:25px;
+      margin-bottom:20px;
+      padding-bottom:10px;
+      border-bottom:1px solid #ddd;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border:1px solid #e5e5e5;
+      border-radius:14px;
+      padding:28px;
+      min-height:170px;
+      box-shadow:0 8px 30px rgba(0,0,0,.05);
+      transition:.25s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 14px 35px rgba(0,0,0,.10);
+    }
+
+    .icon{
+      font-size:30px;
+      margin-bottom:15px;
+    }
+
+    .card h4{
+      font-size:20px;
+      margin-bottom:8px;
+    }
+
+    .card p{
+      color:#666;
+      font-size:14px;
+    }
+
+    .quantity{
+      display:inline-block;
+      margin-top:12px;
+      font-size:12px;
+      font-weight:800;
+      background:#eef2f7;
+      padding:5px 10px;
+      border-radius:20px;
+    }
+
+    /* CTA */
+
+    .cta{
+      text-align:center;
+      padding:70px 24px;
+      background:#111;
+      color:white;
+    }
+
+    .cta h2{
+      font-size:36px;
+      margin-bottom:10px;
+    }
+
+    .cta p{
+      color:#bbb;
+      margin-bottom:25px;
+    }
+
+    .button{
+      display:inline-block;
+      text-decoration:none;
+      background:white;
+      color:#111;
+      padding:14px 24px;
+      border-radius:8px;
+      font-weight:800;
+    }
+
+    .button:hover{
+      background:#e9e9e9;
+    }
+
+    footer{
+      background:#090909;
+      color:#888;
+      text-align:center;
+      padding:25px;
+      font-size:13px;
+    }
+
+    @media(max-width:600px){
+      .nav{
+        padding:13px 18px;
+      }
+
+      .brand{
+        font-size:22px;
+      }
+
+      .back{
+        padding:8px 12px;
+        font-size:13px;
+      }
+
+      .hero{
+        min-height:360px;
+        padding:60px 20px;
+      }
+
+      .equipment{
+        padding:60px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">TRS</a>
+    <a class="back" href="index.html">← BACK TO HOME</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">TRS DIGITAL • RECORD • CREATE</div>
+
+    <h1>
+      TRS
+      <span>RECORDING STUDIO</span>
+    </h1>
+
+    <p>
+      Professional recording equipment, trusted studio technology
+      and a creative environment built for artists, musicians and producers.
+    </p>
+  </div>
+</section>
+
+<main class="equipment">
+
+  <div class="section-title">
+    <h2>Studio Equipment</h2>
+    <p>Explore the equipment and technology used at TRS Recording Studio.</p>
+  </div>
+
+
+  <!-- MICROPHONES -->
+
+  <section class="category">
+    <h3>🎙️ Microphones</h3>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🎙️</div>
+        <h4>Neumann TLM 103</h4>
+        <p>Studio condenser microphone used for professional vocal and instrument recording.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎙️</div>
+        <h4>RØDE NT2-A</h4>
+        <p>Versatile large-diaphragm condenser microphone for vocals and instruments.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎙️</div>
+        <h4>Shure KSM27</h4>
+        <p>Studio condenser microphone for detailed vocal and instrument capture.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MONITORS -->
+
+  <section class="category">
+    <h3>🔊 Studio Monitors</h3>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🔊</div>
+        <h4>Yamaha NS-10</h4>
+        <p>Studio monitoring speakers for critical listening and mixing.</p>
+        <span class="quantity">×2</span>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔊</div>
+        <h4>JBL Studio Monitors</h4>
+        <p>Studio monitoring system for recording, mixing and playback.</p>
+        <span class="quantity">×2</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- RECORDING SYSTEM -->
+
+  <section class="category">
+    <h3>🎛️ Recording & Audio System</h3>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🎛️</div>
+        <h4>Avid HD Native</h4>
+        <p>HD Native sound card for the TRS Pro Tools recording system.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎚️</div>
+        <h4>Avid HD OMNI</h4>
+        <p>Professional audio interface used within the studio recording system.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MIXER & CONTROL -->
+
+  <section class="category">
+    <h3>🎚️ Mixer & Control</h3>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🎚️</div>
+        <h4>Behringer DDX3216</h4>
+        <p>Digital mixer used for professional studio audio control and routing.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎛️</div>
+        <h4>Behringer X-TOUCH</h4>
+        <p>
+          Universal control surface with 9 touch-sensitive motorized faders,
+          LCD scribble strips and Ethernet, USB and MIDI connectivity.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SOFTWARE -->
+
+  <section class="category">
+    <h3>💻 Recording Software</h3>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">💻</div>
+        <h4>Pro Tools Ultimate</h4>
+        <p>Professional recording, editing, mixing and music production software.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- KEYBOARD -->
+
+  <section class="category">
+    <h3>🎹 Keyboard & Workstation</h3>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🎹</div>
+        <h4>Korg Triton</h4>
+        <p>Music workstation and keyboard for production, arrangement and performance.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<section class="cta">
+  <h2>Record at TRS</h2>
+  <p>Bring your music to life in our recording studio.</p>
+
+  <a class="button"
+     href="https://wa.me/919447203683"
+     target="_blank">
+     BOOK A SESSION →
+  </a>
+</section>
+
+
+<footer>
+  TRS Recording Studio & Jam Room • Nalanchira, Trivandrum, Kerala
+</footer>
+
+</body>
+</html>
